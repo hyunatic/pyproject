@@ -1,0 +1,220 @@
+[
+    {
+        "StallID": "1",
+        "FoodName": "Sweet & Sour Chicken /w Rice",
+        "FoodImage": "https://media-cdn.tripadvisor.com/media/photo-s/04/65/c0/c2/mini-wok.jpg",
+        "FoodPrice": 3.50,
+        "Unavailable": "Tuesday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "1",
+        "FoodName": "Salted Egg Chicken /w Rice",
+        "FoodImage": "https://chefquak.files.wordpress.com/2015/11/s6-50-salted-egg-chicken-rice-best-seller-not-bad.jpg",
+        "FoodPrice": 4.20,
+        "Unavailable": "Monday",
+        "SpecialMenuStartTime": 1230,
+        "SpecialMenuEndTime": 1430
+    },
+    {
+        "StallID": "1",
+        "FoodName": "Sweet & Sour Pork /w Rice",
+        "FoodImage": "https://cfcdn2.azsg.opensnap.com/azsg/snapphoto/photo/L9/GSPW/3BG83VE9957D1D03F31974lv.jpg",
+        "FoodPrice": 3.0,
+        "Unavailable": "Friday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "2",
+        "FoodName": "Roasted Chicken Rice",
+        "FoodImage": "https://cdn.copymethat.com/media/orig_how-to-make-singapore-hainanese-roasted--2017020412515082466844wck.jpg",
+        "FoodPrice": 3.50,
+        "Unavailable": "Friday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "2",
+        "FoodName": "Hainanese Chicken Rice",
+        "FoodImage": "https://prod.static9.net.au/_/media/2017/05/26/15/55/Pohs-Hainanese-chicken-rice.jpg",
+        "FoodPrice": 3.0,
+        "Unavailable": "Tuesday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+        
+    },
+    {
+        "StallID": "2",
+        "FoodName": "Lemon Chicken Rice",
+        "FoodImage": "https://media-cdn.tripadvisor.com/media/photo-s/16/e6/ee/5d/lemon-chicken-cutlet.jpg",
+        "FoodPrice": 4.0,
+        "Unavailable": "Wednesday",
+        "SpecialMenuStartTime": 1330,
+        "SpecialMenuEndTime": 1530
+    },
+    {
+        "StallID": "3",
+        "FoodName": "Roti Prata",
+        "FoodImage": "http://carnivalmunchies.com/wp-content/uploads/2017/02/roti-prata-600x350.jpg",
+        "FoodPrice": 2.0,
+        "Unavailable": "Wednesday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "3",
+        "FoodName": "Chicken Nasi Briyani",
+        "FoodImage": "https://recipes.timesofindia.com/thumb/69038542.cms?imgsize=563452&width=800&height=800",
+        "FoodPrice": 5.50,
+        "Unavailable": "Thursday",
+        "SpecialMenuStartTime": 1230,
+        "SpecialMenuEndTime": 1430
+    },
+    {
+        "StallID": "3",
+        "FoodName": "Butter Thosai",
+        "FoodImage": "http://www.indobase.com/recipes/rec-images/dosa.jpg",
+        "FoodPrice": 2.30,
+        "Unavailable": "Monday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "4",
+        "FoodName": "Nasi Lemak",
+        "FoodImage": "https://d1alt1wkdk73qo.cloudfront.net/images/guide/6abb55670f06cebacdc5023d11367153/640x478_ac.jpg",
+        "FoodPrice": 4.20,
+        "Unavailable": "Monday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "4",
+        "FoodName": "Mee Rebus",
+        "FoodImage": "https://asiaflavor.com/wp-content/uploads/2018/06/Hawker-Style-Mee-Rebus-e1528833861184-everglow.jpg",
+        "FoodPrice": 3.90,
+        "Unavailable": "Friday",
+        "SpecialMenuStartTime": 1130,
+        "SpecialMenuEndTime": 1330
+    },
+    {
+        "StallID": "4",
+        "FoodName": "Ayam Penyet",
+        "FoodImage": "https://i.hungrygowhere.com/cms/b3/16/12/fa/33124/b31612fa33124_566x424_fillbg_8228475dad.jpg",
+        "FoodPrice": 5.50,
+        "Unavailable": "Wednesday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "5",
+        "FoodName": "Cold Noodles",
+        "FoodImage": "https://www.koreanbapsang.com/wp-content/uploads/2016/07/DSC_0061-e1468811244361.jpg",
+        "FoodPrice": 4.70,
+        "Unavailable": "Wednesday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "5",
+        "FoodName": "Spicy Rice Cake",
+        "FoodImage": "https://sifu.unileversolutions.com/image/en-SA/recipe-topvisual/2/1260-709/tteokbokki-recipe-50399726.jpg",
+        "FoodPrice": 3.00,
+        "Unavailable": "Friday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "5",
+        "FoodName": "Pork Belly",
+        "FoodImage": "https://www.maangchi.com/wp-content/uploads/2009/09/grilled-porkbelly_grilled.jpg",
+        "FoodPrice": 5.50,
+        "Unavailable": "Thursday",
+        "SpecialMenuStartTime": 1300,
+        "SpecialMenuEndTime": 1530
+    },
+    {
+        "StallID": "6",
+        "FoodName": "Chicken Karage",
+        "FoodImage": "https://static01.nyt.com/images/2018/07/25/dining/HK-karaage-horizontal/merlin_141075300_74569dec-9fc2-4174-931d-019dddef3bb8-articleLarge.jpg",
+        "FoodPrice": 4.50,
+        "Unavailable": "Monday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "6",
+        "FoodName": "Shoyu Ramen",
+        "FoodImage": "https://www.justonecookbook.com/wp-content/uploads/2017/07/Spicy-Shoyu-Ramen-NEW-500x375.jpg",
+        "FoodPrice": 5.00,
+        "Unavailable": "Tuesday",
+        "SpecialMenuStartTime": 1130,
+        "SpecialMenuEndTime": 1400
+    },
+    {
+        "StallID": "6",
+        "FoodName": "Sashimi",
+        "FoodImage": "https://www.tripsavvy.com/thmb/ZU_1JHqPGZ9lJltlUgYqtkiWnbE=/2578x2578/smart/filters:no_upscale()/sushi-plate-56a378d33df78cf7727d84f9.jpg",
+        "FoodPrice": 3.90,
+        "Unavailable": "Friday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "7",
+        "FoodName": "Fish and Chips",
+        "FoodImage": "https://www.delonghi.com/Global/recipes/multifry/173.jpg",
+        "FoodPrice": 6.90,
+        "Unavailable": "Friday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "7",
+        "FoodName": "Chicken Chop",
+        "FoodImage": "http://lh4.ggpht.com/CLy6MZS54bBbU3jsHEGUKNo2EDy4WDxlHWovVn20ZEDsR2k8uBngT9qj9kjPXx2xgtlV12JSSFLVhnkkKY_o6bA=s800",
+        "FoodPrice": 6.50,
+        "Unavailable": "Wednesday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "7",
+        "FoodName": "Lamb Chop",
+        "FoodImage": "http://lh6.ggpht.com/8u1tdCrDkQFnMoXw2LRdO9NGqNjLJK7M7EMf6JrUWfLWby1UAFSDdg1Z37rPEfPD0pNiL3x91k6H3JMv_3yInpY=s800",
+        "FoodPrice": 8.90,
+        "Unavailable": "Monday",
+        "SpecialMenuStartTime": 1030,
+        "SpecialMenuEndTime": 1630
+    },
+    {
+        "StallID": "8",
+        "FoodName": "Laksa",
+        "FoodImage": "https://burpple-3.imgix.net/foods/406c767ea46a62042381585047_original.?w=645&dpr=1&fit=crop&q=80&auto=format",
+        "FoodPrice": 5.50,
+        "Unavailable": "Thursday",
+        "SpecialMenuStartTime": 930,
+        "SpecialMenuEndTime": 1430
+    },
+    {
+        "StallID": "8",
+        "FoodName": "Yong Tau Foo (Soup)",
+        "FoodImage": "https://cheflim.files.wordpress.com/2014/10/img_0323.jpg",
+        "FoodPrice": 4.50,
+        "Unavailable": "Tuesday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    },
+    {
+        "StallID": "8",
+        "FoodName": "Yong Tau Foo (Dry)",
+        "FoodImage": "https://s3.burpple.com/foods/981d4391fc7156bfa2816192_original.?1378876936",
+        "FoodPrice": 3.90,
+        "Unavailable": "Monday",
+        "SpecialMenuStartTime": 0,
+        "SpecialMenuEndTime": 0
+    }
+    
+]

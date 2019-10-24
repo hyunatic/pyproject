@@ -1,0 +1,286 @@
+<!-- Layout.html is the master page -->
+{% extends 'layout.html' %}
+
+<!-- Any syntax within Curly braces relates to python data pass as properties from app.py -->
+
+<!-- Start of content block -->
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Loops the entire stall list -->
+        {% for FoodStall in stall %}
+        <!-- Implement if statements to filter stall information need to be displayed on this page -->
+        <!-- If stallID == 1, then it will display the StallID's information only -->
+        {% if FoodStall.StallID == id %}
+        <div class="col-lg-3 col-md-6 col-sm-6 wow slideInLeft">
+            <div class="card mb-3">
+                <img class="card-img-top" src="{{FoodStall.Image}}" height="150" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{ FoodStall.Name }}</h4>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                        Operation Hours
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <!-- End of if else statements -->
+        {% endfor %}
+        <!-- End of for loop loop statement -->
+        <div class="col-lg-4 col-md-6 col-sm-6 wow slideInDown" data-wow-delay="0.2s">
+            <div class="card card-nav-tabs">
+                <h4 class="card-header card-header-warning">Waiting List</h4>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <form action="/menu/{{id}}" method="POST">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">people</i>
+                                    </span>
+                                </div>
+                                <!-- Generate an HTML input tag with necessary error checking stated in form/QueueSystem.py -->
+                                {{form.queuenumber(class_="form-control", placeholder="Enter No. of people")}}
+                            </div>
+                            <input type="submit" class="btn btn-warning" value="Check"> <br>
+                            <!-- Display queue number when queuenumber is not equal to 0 -->
+                            {% if queuenumber != 0%}
+                            <small><i class="material-icons">alarm</i> Est. waiting time: {{queuenumber}} mins</small>
+                            {% endif %}
+                        </form>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-6 wow slideInRight" data-wow-delay="0.4s">
+            <div class="card card-nav-tabs">
+                <h4 class="card-header card-header-info">Date & Time</h4>
+                <div class="card-body">
+                    <h3 class="card-title">Today is: {{today}}</h3>
+                    <div class="clock" style="margin:2em;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.7s">
+            <div class="card">
+                <div class="card-header card-header-tabs card-header-primary">
+                    <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                            <span class="nav-tabs-title">Filter:</span>
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#profile" data-toggle="tab">
+                                        <i class="material-icons">local_dining</i> All
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#messages" data-toggle="tab">
+                                        <i class="material-icons">highlight_off</i> Unavailable
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#settings" data-toggle="tab">
+                                        <i class="material-icons">check_circle</i> Available
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="profile">
+                            <div class="row">
+                                <!-- Display available menu item list that's filtered from python function/menuitems.py -->
+                                {% for AvailableItem in available %}
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="card mb-3">
+                                        <img class="card-img-top" src="{{AvailableItem.FoodImage}}" height="200"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ AvailableItem.FoodName }}</h4>
+                                            <p class="card-text h2">{{ "${:,.2f}".format(AvailableItem.FoodPrice) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="stats">
+                                                <form action="/thanks" method="post">
+                                                    <script src="https://checkout.stripe.com/checkout.js"
+                                                        class="stripe-button" data-key="{{ key }}"
+                                                        data-description="NTU Canteen System"
+                                                        data-amount="{{AvailableItem.FoodPrice * 100}}" data-locale="auto"
+                                                        data-currency="sgd">
+                                                        </script>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                <!-- Display special menu item list that's filtered from python function/menuitems.py -->
+                                {% for SpecialItem in special %}
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="card mb-3">
+                                        <img class="card-img-top" src="{{SpecialItem.FoodImage}}" height="200"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ SpecialItem.FoodName }}</h4>
+                                            <p class="card-text h2">{{ "${:,.2f}".format(SpecialItem.FoodPrice) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="stats">
+                                                <button disabled class="btn btn-primary">Today Available at
+                                                    {{SpecialItem.SpecialMenuStartTime}} ~
+                                                    {{SpecialItem.SpecialMenuEndTime}}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                <!-- Display Unavailable menu item list that's filtered from python function/menuitems.py -->                               
+                                {% for UnavailableItem in unavailable %}
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="card mb-3">
+                                        <img class="card-img-top" src="{{UnavailableItem.FoodImage}}" height="200"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ UnavailableItem.FoodName }}</h4>
+                                            <p class="card-text h2">{{ "${:,.2f}".format(UnavailableItem.FoodPrice) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="stats">
+                                                <button disabled class="btn btn-primary">Unavailable on
+                                                    {{ UnavailableItem.Unavailable }}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <br>
+                            <a href="{{ url_for('StallPage') }}" class="btn btn-danger">Back</a>
+                        </div>
+                        <div class="tab-pane" id="messages">
+                            <div class="row">
+                                <!-- Display special menu item list that's filtered from python function/menuitems.py -->                               
+                                {% for SpecialItem in special %}
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="card mb-3">
+                                        <img class="card-img-top" src="{{SpecialItem.FoodImage}}" height="200"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ SpecialItem.FoodName }}</h4>
+                                            <p class="card-text h2">{{ "${:,.2f}".format(SpecialItem.FoodPrice) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="stats">
+                                                <button disabled class="btn btn-primary">Today Available at
+                                                    {{SpecialItem.SpecialMenuStartTime}} ~
+                                                    {{SpecialItem.SpecialMenuEndTime}}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                                <!-- Display Unavailable menu item list that's filtered from python function/menuitems.py -->                                                               
+                                {% for UnavailableItem in unavailable %}
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="card mb-3">
+                                        <img class="card-img-top" src="{{UnavailableItem.FoodImage}}" height="200"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ UnavailableItem.FoodName }}</h4>
+                                            <p class="card-text h2">{{ "${:,.2f}".format(UnavailableItem.FoodPrice) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="stats">
+                                                <button disabled class="btn btn-primary">Unavailable on
+                                                    {{ UnavailableItem.Unavailable }}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <br>
+                            <a href="{{ url_for('StallPage') }}" class="btn btn-danger">Back</a>
+                        </div>
+                        <div class="tab-pane" id="settings">
+                            <div class="row">
+                                <!-- Display available menu item list that's filtered from python function/menuitems.py -->
+                                {% for AvailableItem in available %}
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div class="card mb-3">
+                                        <img class="card-img-top" src="{{AvailableItem.FoodImage}}" height="200"
+                                            alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{ AvailableItem.FoodName }}</h4>
+                                            <p class="card-text h2">{{ "${:,.2f}".format(AvailableItem.FoodPrice) }}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="stats">
+                                                <form action="/thanks" method="post">
+                                                    <script src="https://checkout.stripe.com/checkout.js"
+                                                        class="stripe-button" data-key="{{ key }}"
+                                                        data-description="NTU Canteen System"
+                                                        data-amount="{{AvailableItem.FoodPrice * 100}}" data-locale="auto"
+                                                        data-currency="sgd">
+                                                        </script>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <br>
+                            <a href="{{ url_for('StallPage') }}" class="btn btn-danger wow fadeIn"
+                                data-wow-delay="1.4s">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <!-- Implement if statements to filter stall information need to be displayed on this page -->
+        <!-- If stallID == 1, then it will display the StallID's information only -->
+    {% for FoodStall in stall %}
+    {% if FoodStall.StallID == id %}
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{FoodStall.Name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <b>Operating Hours:</b> <br> {{FoodStall.OpeningTime}} ~ {{FoodStall.ClosingTime}} <br>
+                <b>Open on:</b> <br> {{FoodStall.Opened}} <br>
+                <b>Closed on:</b> <br> {{FoodStall.Closed}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <!-- End of if else statements -->
+    {% endfor %}
+    <!-- End of for loop loop statement -->
+</div>
+{% endblock %}
+<!-- End of content block -->
